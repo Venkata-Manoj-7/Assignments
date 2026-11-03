@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
-class SinglyLinkedListTest{
+class SinglyLinkedListInsertionTest{
 
     @Test
     void shoudlStartWithAnEmptyHeadAndTail(){
