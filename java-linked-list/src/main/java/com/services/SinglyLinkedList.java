@@ -1,4 +1,5 @@
 package com.services;
+import java.util.NoSuchElementException;
 
 public class SinglyLinkedList{
 
@@ -74,6 +75,85 @@ public class SinglyLinkedList{
         return;
     }
 
+   public void deleteFirst(){
+    if(head==null){
+         throw new NoSuchElementException("List is empty");
+    }
+       
+        head = head.next;
+        if(head==null) {
+            tail=null;
+        }
+        
+        
+
+
+   }
+
+   public void deleteLast(){
+    if(head==null){
+        throw new NoSuchElementException("List is empty");
+       
+    }
+    if(head.next==null){
+        head=null;
+        tail=null;
+        return;
+    }
+    Node tempPtr= head;
+    while(tempPtr.next!=tail && tempPtr.next!=null){
+        tempPtr=tempPtr.next;
+    }
+     
+    tempPtr.next=null;
+    tail=tempPtr;
+
+
+   }
+
+   public void deleteAt(int idx){
+    if(idx<0){
+          throw new IndexOutOfBoundsException("Invalid index: " + idx);
+    }
+    if (head == null) {
+        throw new IndexOutOfBoundsException("List is empty");
+    }
+
+    // if(head==tail  ){
+    //     head=null;
+    //     tail=null;
+    //     return;
+    // }
+    if(idx==0)  {
+        deleteFirst();
+        return;
+    }
+      Node tempPtr= head;
+      int count=0;
+
+      while(count<idx-1){
+         if (tempPtr.next == null) {
+            throw new IndexOutOfBoundsException("Invalid index: " + idx);
+        }
+        tempPtr=tempPtr.next;
+        count++;
+
+      }
+      if (tempPtr.next == null) {
+        throw new IndexOutOfBoundsException("Invalid index: " + idx);
+    }
+      Node delNode = tempPtr;
+      delNode=delNode.next;
+    
+      tempPtr.next=tempPtr.next.next;
+        delNode.next=null;
+
+        if(tempPtr.next==null){
+            tail=tempPtr;
+        }
+      
+
+   }
      
 
 
