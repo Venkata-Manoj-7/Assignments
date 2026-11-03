@@ -119,11 +119,7 @@ public class SinglyLinkedList{
         throw new IndexOutOfBoundsException("List is empty");
     }
 
-    // if(head==tail  ){
-    //     head=null;
-    //     tail=null;
-    //     return;
-    // }
+    
     if(idx==0)  {
         deleteFirst();
         return;
@@ -154,7 +150,31 @@ public class SinglyLinkedList{
       
 
    }
-     
+
+   public boolean contains(int data) {
+    Node current = head;
+
+    while (current != null) {
+         if (current.data == data) {
+             return true;
+         }
+
+         current = current.next;
+     }
+
+           return false;
+}
+    
+public int  indexOf(int data){
+    Node curr = head;
+    int idx=0;
+    while(curr!=null){
+        if(curr.data==data) return idx;
+        idx++;
+        curr=curr.next;
+    }
+    return -1;
+}
 
 
     
