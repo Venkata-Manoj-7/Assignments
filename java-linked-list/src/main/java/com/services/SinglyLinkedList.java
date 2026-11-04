@@ -186,5 +186,14 @@ public void set(int index, int data) {
     current.data = data;
 }
 
-    
+@Override
+public String toString() {
+    StringBuilder result = new StringBuilder();
+    Node current = head;
+    while (current != null) {
+        result.append(current.data).append(" -> ");
+        current = current.next;
+    }
+    return result.append("null").toString();
+}
 }
