@@ -135,5 +135,56 @@ public int  indexOf(int data){
     }
     return -1;
 }
+public int size() {
+    int count = 0;
+    Node current = head;
+    while (current != null) {
+        count++;
+        current = current.next;
+    }
+    return count;
+}
+public boolean isEmpty() {
+    return head == null;
+}
+public void clear() {
+    head = null; tail = null;
+}
+public int get(int index) {
+    if (index < 0) {
+        throw new IndexOutOfBoundsException("Invalid index: " + index);
+    }
+    Node current = head;
+
+    for (int i = 0; i < index; i++) {
+        if (current == null) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+        current = current.next;
+    }
+
+    if (current == null) {
+        throw new IndexOutOfBoundsException("Invalid index: " + index);
+    }
+
+    return current.data;
+}
+public void set(int index, int data) {
+    if (index < 0) {
+        throw new IndexOutOfBoundsException("Invalid index: " + index);
+    }
+    Node current = head;
+    for (int i = 0; i < index; i++) {
+        if (current == null) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+        current = current.next;
+    }
+    if (current == null) {
+        throw new IndexOutOfBoundsException("Invalid index: " + index);
+    }
+    current.data = data;
+}
+
     
 }
