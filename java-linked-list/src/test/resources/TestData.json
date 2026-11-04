@@ -1,0 +1,19 @@
+{
+  "utilityTests": {
+    "emptyList": [],
+    "singleElementList": [10],
+    "multipleElementList": [10, 20, 30, 40],
+    "duplicateElementList": [10, 20, 10, 30]
+  },
+  "accessTests": {
+    "values": [10, 20, 30, 40],
+    "validIndexes": [0, 1, 2, 3],
+    "invalidIndexes": [-1, 4]
+  },
+  "updateTests": {
+    "values": [10, 20, 30],
+    "indexToUpdate": 1,
+    "newValue": 99,
+    "expectedValues": [10, 99, 30]
+  }
+}
